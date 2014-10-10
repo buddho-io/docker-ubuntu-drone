@@ -1,6 +1,8 @@
 FROM buddho/ubuntu-dind
 MAINTAINER lance@buddho.io
 
+RUN apt-get update && apt-get install -y wget && apt-get clean && /var/lib/apt/lists/*
+
 # drone.io
 RUN wget http://downloads.drone.io/latest/drone.deb && \
     dpkg -i drone.deb && \
